@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Grado;
-use App\Models\User;
+//use App\Models\Degree;
+//use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         //User::factory(10)->create();
-        //Grado::factory(3)->create();
-       $this->call(Gradoseeder::class);
-       $this->call(Funcionarioseeder::class);
-       $this->call(Divisioneseeder::class);
-       $this->call(Pestudioseeder::class);
+        //Degree::factory(3)->create();
+       $this->call(DegreesSeeder::class);
+       $this->call(OfficialsSeeder::class);
+       $this->call(DivisionsSeeder::class);
+       $this->call(PlanStudiesSeeder::class);
        
     }
 }

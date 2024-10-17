@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aapestudios', function (Blueprint $table) {
+        Schema::create('planstudies', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
-            $table->unsignedBigInteger('id_d');
-            $table->unsignedBigInteger('id_f');
-            $table->foreign('id_d')->references('id')->on('aadivisiones')->onDelete('cascade');
-            $table->foreign('id_f')->references('id')->on('aafuncionarios')->onDelete('cascade');
+            $table->unsignedBigInteger('division_id');
+            $table->unsignedBigInteger('official_id');
+            $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
+            $table->foreign('official_id')->references('id')->on('officials')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,7 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('aapestudios');
+        Schema::dropIfExists('planstudies');
     }
 };
 

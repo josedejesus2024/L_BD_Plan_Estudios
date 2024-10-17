@@ -6,7 +6,7 @@ use App\Models\Division;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class Divisioneseeder extends Seeder
+class DivisionsSeeder extends Seeder
 {
     /**
      * Run the database seeds.

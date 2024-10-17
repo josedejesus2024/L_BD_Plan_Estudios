@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Grado;
+use App\Models\Degree;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Grado>
  */
-class GradoFactory extends Factory
+class DegreeFactory extends Factory
 {
-    protected $model = Grado::class;
+    protected $model = Degree::class;
     /**
      * Define the model's default state.
      *

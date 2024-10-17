@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aafuncionarios', function (Blueprint $table) {
+        Schema::create('officials', function (Blueprint $table) {
             $table->id();
             $table->string('Nombres', 50);
             $table->string('APaterno', 50);
             $table->string('AMaterno', 50);
             $table->string('email')->unique();
-            $table->unsignedBigInteger('id_g');
-            $table->foreign('id_g')->references('id')->on('aagrados')->onDelete('cascade');
+            $table->unsignedBigInteger('degree_id');
+            $table->foreign('degree_id')->references('id')->on('degrees')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,7 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('aafuncionarios');
+        Schema::dropIfExists('officials');
     }
 };
  

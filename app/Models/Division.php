@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Pestudio;
+use App\Models\PlanStudy;
 
 class Division extends Model
 {
     use HasFactory;
-    protected $table = "aadivisiones";
+    protected $table = "divisions";
 
-    public function pestudios()
+    public function planStudies()
     {
-        return $this->hasMany(Pestudio::class, 'id_d','id');
+        return $this->hasMany(PlanStudy::class, 'division_id','id');
     }
     
 }
