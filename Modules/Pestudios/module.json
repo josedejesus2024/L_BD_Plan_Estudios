@@ -1,0 +1,11 @@
+{
+    "name": "Pestudios",
+    "alias": "pestudios",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Pestudios\\App\\Providers\\PestudiosServiceProvider"
+    ],
+    "files": []
+}

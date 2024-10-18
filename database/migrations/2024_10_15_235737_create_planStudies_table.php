@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('planstudies', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
+            $table->string('slug');
             $table->unsignedBigInteger('division_id');
             $table->unsignedBigInteger('official_id');
             $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
