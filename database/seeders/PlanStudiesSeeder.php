@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Str;
 use App\Models\PlanStudy;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
+
 
 
 class PlanStudiesSeeder extends Seeder

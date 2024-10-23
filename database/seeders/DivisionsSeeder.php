@@ -1,11 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Str;
 use App\Models\Division;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
+
 
 class DivisionsSeeder extends Seeder
 {
