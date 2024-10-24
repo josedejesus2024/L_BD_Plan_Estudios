@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\EstandarController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use \Spatie\Permission\Middleware\RoleMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,23 +26,20 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/estandar', function () {
-    return view('Estandar.index');
-})->middleware(['auth', 'verified'])->name('estandar');
-
-Route::get('/admin', function () {
-    return view('Admin.index');
-})->middleware(['auth', 'verified'])->name('admin');
-
-
+// Route::get('/admin', function () {
+//     return view('Admin.index');
+// })->middleware(['auth', 'verified'])->name('admin');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
-
 });
+
+Route::group(['middleware'=>[RoleMiddleware::using('Egresado')]],function(){
+    Route::get('/estandar',[EstandarController::class, 'index'])->name('Egresado');
+});
+
+Route::get('/administrador',[AdministradorController::class, 'index'])->name('Administrador');
 
 require __DIR__.'/auth.php';

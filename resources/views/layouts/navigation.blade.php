@@ -17,17 +17,21 @@
                     </x-nav-link>
                 </div>
 
+                @role('Administrador')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                    <x-nav-link :href="route('Administrador')" :active="request()->routeIs('Administrador')">
                         {{ __('Vista Admin') }}
                     </x-nav-link>
                 </div>
+                @endrole
 
+                @role('Egresado')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('estandar')" :active="request()->routeIs('estandar')">
+                    <x-nav-link :href="route('Egresado')" :active="request()->routeIs('Egresado')">
                         {{ __('Vista Estandar') }}
                     </x-nav-link>
                 </div>
+                @endrole
 
             </div>
 
