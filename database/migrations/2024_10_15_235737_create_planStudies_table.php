@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('slug');
             $table->unsignedBigInteger('division_id');
             $table->unsignedBigInteger('official_id');
-            $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
-            $table->foreign('official_id')->references('id')->on('officials')->onDelete('cascade');
+            $table->foreign('division_id')->references('id')->on('divisions');
+            $table->foreign('official_id')->references('id')->on('officials');
             $table->timestamps();
         });
     }

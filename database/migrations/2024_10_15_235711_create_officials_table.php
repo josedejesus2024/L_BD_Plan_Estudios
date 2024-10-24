@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('AMaterno', 50);
             $table->string('email')->unique();
             $table->unsignedBigInteger('degree_id');
-            $table->foreign('degree_id')->references('id')->on('degrees')->onDelete('cascade');
+            $table->foreign('degree_id')->references('id')->on('degrees');
             $table->timestamps();
         });
     }
