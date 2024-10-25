@@ -10,6 +10,21 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+
+                    
+                    @can('egresado.users.show')
+                    <H2>HOLA egresado</H2>
+                    @endcan
+
+                    @can('funcionario.users.show')
+                    <H2>HOLA funcionario</H2>
+                    @endcan
+
+                    @can('admin.users.show')
+                    <H2>HOLA administrador</H2>
+                    @endcan
+
+
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'egresado.users.show'])//egresados ver 
         ->syncRoles([$egre]);
 
+
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
 
